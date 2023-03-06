@@ -1,16 +1,22 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom";
 import './index.css';
-import { BrowserRouter as Router } from 'react-router-dom';
 import Home from './components/Home';
+import Navigation from './components/Navigation';
 import 'semantic-ui-css/semantic.min.css';
 
 
+const App = () => {
+  return (
 
-const root = createRoot(document.getElementById('root'));
-root.render(
-  <Router>
+<>
+<Navigation/>
+<BrowserRouter>
     <Home />
-  </Router>
-);
+  </BrowserRouter>
+  </> 
+  );
+};
+ReactDOM.render(<App />, document.getElementById("root"));
 
